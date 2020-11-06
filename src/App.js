@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Style from './App.module.scss';
+// import TestComponent from './test-component';
+import Contact from './components/contact';
+import Header from './components/header';
+import Home from './components/home';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter, Route } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={Style.appWrapper}>
+      <BrowserRouter>
+        <Header />
+        <Container className="px-3">
+          <Route path="/" exact component={Home} />
+          <Route path="/contact" component={Contact} />
+        </Container>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+// <TestComponent />; // Hehehhhe;

@@ -1,0 +1,70 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin background-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $color;
+        -moz-box-shadow: inset $top $left $blur $color;
+        box-shadow: inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin border(
+    $var-direction: 'border',
+    $var-width: $border-width,
+    $var-color: $border-color
+) {
+    @if $var-direction == 'border' {
+        border: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-bottom' {
+        border-bottom: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-top' {
+        border-top: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-right' {
+        border-right: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-left' {
+        border-left: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-tb' {
+        border-bottom: $var-width solid $var-color;
+        border-top: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-lr' {
+        border-left: $var-width solid $var-color;
+        border-right: $var-width solid $var-color;
+    }
+    @if $var-direction == 'border-no-top' {
+        border: $var-width solid $var-color;
+        border-top: none;
+    }
+    @if $var-direction == 'border-no-bottom' {
+        border: $var-width solid $var-color;
+        border-bottom: none;
+    }
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}

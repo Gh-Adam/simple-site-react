@@ -1,0 +1,22 @@
+@import "./../../assets/scss/styles.scss";
+header {
+    background-image: url("./../../assets/imgs/header3.jpg");
+    height: 100%;
+    margin-top: 2.5rem;
+    @include background-cover();
+
+    .customNavbar {
+        @include border(border-bottom, 4px, #74bc25);
+        @include box-shadow(0, 2px, 6px, #13355a);
+        .navBrand {
+            font-family: "Sansita Swashed", cursive;
+            color: #74bc25;
+            font-size: 1.7rem;
+            font-weight: 600;
+            &:hover {
+                color: #13355a;
+                @include transition(all 0.85s ease-in-out);
+            }
+        }
+    }
+}
